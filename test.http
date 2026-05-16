@@ -1,0 +1,23 @@
+### API root
+GET http://127.0.0.1:8000/
+
+### List directions
+GET http://127.0.0.1:8000/directions
+
+### Full timetable
+GET http://127.0.0.1:8000/timetable
+
+### Lak Hok → Rangsit schedule
+GET http://127.0.0.1:8000/timetable/lak_hok_to_rangsit
+
+### Lak Hok → Krung Thep Aphiwat schedule
+GET http://127.0.0.1:8000/timetable/lak_hok_to_krung_thep_aphiwat
+
+### All departures (flat list) – to Bangkok
+GET http://127.0.0.1:8000/departures?direction=lak_hok_to_krung_thep_aphiwat
+
+### Next train NOW – to Rangsit
+GET http://127.0.0.1:8000/next?direction=lak_hok_to_rangsit
+
+### Next train at a specific time – to Bangkok
+GET http://127.0.0.1:8000/next?direction=lak_hok_to_krung_thep_aphiwat&time=08:30
