@@ -4,6 +4,8 @@ Free, open timetable API for the SRT Red Line commuter rail at **Lak Hok Station
 
 > Data source: official station timetable poster (updated 15/08/2023).
 
+![Timetable Poster](docs/S__2736135.jpg)
+
 ---
 
 ## Endpoints
@@ -48,23 +50,6 @@ Open **http://127.0.0.1:8000/docs** to explore the API.
 
 ---
 
-## Public Tunnel (ngrok)
-
-To expose your local server to the internet for testing:
-
-```bash
-# Terminal 1 – start the API
-uvicorn api.index:app --reload --port 8000
-
-# Terminal 2 – start the tunnel
-ngrok http 8000
-```
-
-ngrok will print a public URL such as `https://abc123.ngrok-free.app`.  
-Use that URL in place of `http://localhost:8000` for any requests.
-
----
-
 ## Example Requests
 
 ```bash
@@ -90,24 +75,14 @@ You can also use `test.http` with the [REST Client](https://marketplace.visualst
 ```
 redline-api/
 ├── api/
-│   └── index.py          # FastAPI app (Vercel entry point)
+│   └── index.py          # FastAPI app
 ├── data/
 │   └── timetable.json    # timetable data
+├── docs/
+│   └── S__2736135.jpg    # timetable poster photo
 ├── requirements.txt
-├── vercel.json           # Vercel deployment config
 ├── test.http             # sample requests (REST Client extension)
-└── SETUP.md              # detailed setup and deployment guide
 ```
-
----
-
-## Deploy to Vercel
-
-1. Push the repo to GitHub.
-2. Go to [vercel.com/new](https://vercel.com/new) → import the repo → click **Deploy**.
-3. Every `git push` to `main` auto-redeploys.
-
-See [SETUP.md](SETUP.md) for full step-by-step instructions.
 
 ---
 
